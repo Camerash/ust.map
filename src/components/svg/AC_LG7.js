@@ -7,7 +7,13 @@ import Tag from '../Tag';
 class AC_LG7 extends Component {
   constructor(props) {
    super(props);
-   this.state = {isInFocus: true};
+   this.state = {isInFocus: false};
+   this.onLayerClick = this.onLayerClick.bind(this);
+  }
+
+  onLayerClick() {
+    this.props.onClick(this.props.id);
+    this.setState({isInFocus: true}) 
   }
 
   render() {
@@ -16,22 +22,23 @@ class AC_LG7 extends Component {
     Object.keys(infoJson).forEach(function(key) {
       infoArr.push(infoJson[key]);
     });
+    let dummyLayer = infoArr.map(item => <Tag id={item.id} key={item.id} width="5700" height="2900" data={item} />)
 
     if(this.state.isInFocus) {
-      tagLayer = infoArr.map(item => <Tag id={item.id} key={item.id} width="5700" height="2900" data={item} />)
+      tagLayer = dummyLayer;
     } else {
       tagLayer = null;
     }
 
     return (
       <div>
-        <div className="tag-layer">
-          {tagLayer}
-        </div>
-        <svg id="AC-LG7" viewBox="0 0 5700 2900">
+        <svg id="AC-LG7" viewBox="0 0 5700 2900" className="floor-svg" style={{
+            WebkitTransform: `scale(${this.props.scale},${this.props.scale})`,
+            Transform: `scale(${this.props.scale},${this.props.scale})`
+          }}>
            <defs />
            <g id="AC-LG7-BG" className="floor-bg">
-             <path
+             <path onClick={this.onLayerClick}
                d="M1098 1759a10 10 0 0 1-10-10v-60H575a10 10 0 0 1-10-10v-84a10 10 0 0 1 10-10l37-1 646 4 2-471-154 1-212 57a10 10 0 0 1-12-7l-11-49-658 4a10 10 0 0 1-10-10l-1-191a10 10 0 0 1 10-10h139V704a10 10 0 0 1 10-10h177l55 3c92 0 149-22 181-40 35-20 48-40 48-40a10 10 0 0 1 8-5h261a10 10 0 0 1 7 3 440 440 0 0 1 244-77l21-22a10 10 0 0 1 7-4 10 10 0 0 1 7 3l24 23c56 4 110 16 160 34a469 469 0 0 1 111 60c47 35 72 68 81 79l42 1v-89a10 10 0 0 1 10-10h650a10 10 0 0 1 10 10l-1 153a10 10 0 0 1-10 9h-151v155a10 10 0 0 1-3 8l-206 203v289a10 10 0 0 1-10 10c-50 2-121 19-147 26l30 104a10 10 0 0 1-8 12c-53 13-104 37-104 38a10 10 0 0 1-14-5l-47-99a822 822 0 0 0-302 229 10 10 0 0 1-8 4z"
                fill="#e6e7e8"
              />
@@ -101,6 +108,13 @@ class AC_LG7 extends Component {
              <path className="ac-lg7-cls-7" d="M1880 680h48v50h-48zm527 1h48v94h-48z" />
            </g>
         </svg>
+        <div className="floor-svg" style={{
+            opacity: `${this.props.selected ? 1 : 0}`,
+            WebkitTransform: `scale(${this.props.scale},${this.props.scale})`,
+            Transform: `scale(${this.props.scale},${this.props.scale})`
+          }}>
+          {tagLayer}
+        </div>
       </div>
     );
   }

@@ -13,8 +13,8 @@ class TagIcon extends Component {
 class Tag extends Component {
 
   render() {
-    let x = ((this.props.data.x-15) / this.props.width) * 100;
-    let y = ((this.props.data.y-30) / this.props.height) * 100;
+    let x = ((this.props.data.x) / this.props.width) * 100;
+    let y = ((this.props.data.y) / this.props.height) * 100;
 
     return (
       <div

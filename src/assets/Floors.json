@@ -3,42 +3,49 @@
     "id":"ac-7",
     "name": "7",
     "index": 12,
+    "scale": 1,
     "z": 60
   },
   "AC-6": {
     "id":"ac-6",
     "name": "6",
     "index": 11,
+    "scale": 1,
     "z": 55
   },
   "AC-5": {
     "id":"ac-5",
     "name": "5",
     "index": 10,
+    "scale": 1,
     "z": 50
   },
   "AC-4": {
     "id":"ac-4",
     "name": "4",
     "index": 9,
+    "scale": 1,
     "z": 45
   },
   "AC-3": {
     "id":"ac-3",
     "name": "3",
     "index": 8,
+    "scale": 1,
     "z": 40
   },
   "AC-2": {
     "id":"ac-2",
     "name": "2",
     "index": 7,
+    "scale": 1,
     "z": 35
   },
   "AC-1": {
     "id":"ac-1",
     "name": "1",
     "index": 6,
+    "scale": 1,
     "z": 30
   },
   "AC-G": {
@@ -51,30 +58,35 @@
     "id":"ac-lg1",
     "name": "LG1",
     "index": 4,
+    "scale": 1,
     "z": 20
   },
   "AC-LG3": {
     "id":"ac-lg3",
     "name": "LG3",
     "index": 3,
+    "scale": 1,
     "z": 15
   },
   "AC-LG4": {
     "id":"ac-lg4",
     "name": "LG4",
     "index": 2,
+    "scale": 1,
     "z": 10
   },
   "AC-LG5": {
     "id":"ac-lg5",
     "name": "LG5",
     "index": 1,
+    "scale": 1,
     "z": 5
   },
   "AC-LG7": {
     "id":"ac-lg7",
     "name": "LG7",
     "index": 0,
+    "scale": 4,
     "z": 0
   }
 }

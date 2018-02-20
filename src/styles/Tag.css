@@ -1,6 +1,8 @@
 .map-tag{
+  display: flex;
   position: absolute;
   width: 5px;
   height: 5px;
+  transform: translate(-50%, -50%);
   background-color: #ff0000;
 }

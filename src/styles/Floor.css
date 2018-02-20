@@ -32,3 +32,12 @@
 	top: 0;
 	left: 0;
 }
+
+.floor-hidden {
+	opacity: 0;
+}
+
+.ac-lg7 {
+	-webkit-transform: translateX(150vmin) translateZ(10vmin) rotateX(-30deg)!important;
+	transform: translateX(150vmin) translateZ(10vmin) rotateX(-30deg)!important;
+}

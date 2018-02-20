@@ -23,25 +23,48 @@ const floorMap = {
 
 class Floor extends Component {
 
-  generateFloor(name) {
-    console.log(name)
-    const floor = floorMap[name];
-    return React.createElement(floor, {});
+  generateFloor(data, onClick, selected) {
+    console.log(data.id)
+    const floor = floorMap[data.id];
+    return React.createElement(floor, {id:data.id, onClick:onClick, selected:selected, scale: selected ? data.scale : 1});
   }
 
   render() {
     return (
       <div
-        className='floor'
+      className={`floor ${this.props.selected ? this.props.data.id : '' } ${!this.props.selected && this.props.inFocus ? 'floor-hidden' : '' }`}
         style={{WebkitTransform: `translateZ(${this.props.data.z}vmin)`,
       	       Transform: `translateZ(${this.props.data.z}vmin)`}}>
-        {this.generateFloor(this.props.data.id)}
+        {this.generateFloor(this.props.data, this.props.onClick, this.props.selected)}
       </div>
     );
   }
 }
 
 class Layers extends Component {
+  constructor(props) {
+    super(props);
+    var stateMap = new Map();
+    Object.keys(floors).forEach(function(key) {
+      stateMap.set(floors[key].id, false);
+    });
+    this.state = {
+      floorSelected: stateMap,
+      inFocus: false
+    }
+    this.onFloorClick = this.onFloorClick.bind(this);
+  }
+
+  onFloorClick(id) {
+    if(this.state.inFocus) return;
+    var stateMap = this.state.floorSelected;
+    stateMap.set(id, true);
+    this.setState({
+      floorSelected: stateMap,
+      inFocus: true
+    });
+  }
+
   render() {
     var floorArr = [];
     Object.keys(floors).forEach(function(key) {
@@ -50,8 +73,11 @@ class Layers extends Component {
 
     return (
       <div className='maps'>
-        <div className='layers'>
-          {floorArr.map(item => <Floor key={item.id} data={item} />)}
+        <div className='layers' style={{
+            WebkitTransform: `rotateX(65deg) translateZ(-20vmin) rotateZ(${this.state.inFocus ? '-10' : '-25'}deg)`,
+            Transform: `rotateX(65deg) translateZ(-20vmin) rotateZ(${this.state.inFocus ? '-10' : '-25'}deg)`
+          }}>
+          {floorArr.map(item => <Floor key={item.id} data={item} inFocus={this.state.inFocus} selected={this.state.floorSelected.get(item.id)} onClick={this.onFloorClick} />)}
         </div>
       </div>
     );
