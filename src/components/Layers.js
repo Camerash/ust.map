@@ -53,6 +53,19 @@ class Layers extends Component {
       inFocus: false
     }
     this.onFloorClick = this.onFloorClick.bind(this);
+    this.showAllFloor = this.showAllFloor.bind(this);
+  }
+
+  showAllFloor() {
+    if(!this.state.inFocus) return;
+    var stateMap = this.state.floorSelected;
+    Object.keys(floors).forEach(function(key) {
+      stateMap.set(floors[key].id, false);
+    });
+    this.setState({
+      floorSelected: stateMap,
+      inFocus: false
+    });
   }
 
   onFloorClick(id) {
