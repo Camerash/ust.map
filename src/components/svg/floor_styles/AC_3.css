@@ -1,0 +1,25 @@
+.ac-3-cls-3,
+.ac-3-cls-4 {
+  fill : #d4e6ac;
+}
+
+.ac-3-cls-3,
+.ac-3-cls-5,
+.ac-3-cls-6,
+.ac-3-cls-8 {
+  stroke            : #6d6e71;
+  stroke-width      : 2px;
+  stroke-miterlimit : 10;
+}
+
+.ac-3-cls-5 {
+  fill : none;
+}
+
+.ac-3-cls-6 {
+  fill : #d1d3d4;
+}
+
+.ac-3-cls-8 {
+  fill : #9ab3ce;
+}

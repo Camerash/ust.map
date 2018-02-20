@@ -1,0 +1,19 @@
+.floor-bg {
+  pointer-events : auto;
+  cursor         : zoom-in;
+}
+
+.floor-bg-border {
+    -webkit-transition: -webkit-transform 1s, fill 0.3s;
+  	transition: transform 1s, fill 0.3s;
+}
+
+.floor-bg:hover .floor-bg-border{
+  fill:  #01579b;
+}
+
+.tag-layer{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}

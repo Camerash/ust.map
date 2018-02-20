@@ -1,0 +1,37 @@
+.ac-1-cls-1 {
+  fill : #e4deda;
+}
+
+.ac-1-cls-2 {
+  fill : #6d6e71;
+}
+
+.ac-1-cls-3 {
+  fill : #d4e6ac;
+}
+
+.ac-1-cls-3,
+.ac-1-cls-4,
+.ac-1-cls-5,
+.ac-1-cls-6,
+.ac-1-cls-7 {
+  stroke            : #6d6e71;
+  stroke-width      : 2px;
+  stroke-miterlimit : 10;
+}
+
+.ac-1-cls-4 {
+  fill : none;
+}
+
+.ac-1-cls-5 {
+  fill : #d1d3d4;
+}
+
+.ac-1-cls-6 {
+  fill : #9bb3ce;
+}
+
+.ac-1-cls-7 {
+  fill : #9ab3ce;
+}

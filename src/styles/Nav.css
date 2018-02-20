@@ -1,0 +1,10 @@
+/* Nav */
+.nav {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	margin: 2em;
+	text-align: center;
+	-webkit-transition: opacity 0.8s;
+	transition: opacity 0.8s;
+}

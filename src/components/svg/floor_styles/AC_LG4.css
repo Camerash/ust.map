@@ -1,0 +1,24 @@
+.ac-lg4-cls-3 {
+  fill : #d4e6ac;
+}
+
+.ac-lg4-cls-3,
+.ac-lg4-cls-4,
+.ac-lg4-cls-6,
+.ac-lg4-cls-7 {
+  stroke            : #6d6e71;
+  stroke-width      : 2px;
+  stroke-miterlimit : 10;
+}
+
+.ac-lg4-cls-4 {
+  fill : #d1d3d4;
+}
+
+.ac-lg4-cls-6 {
+  fill : none;
+}
+
+.ac-lg4-cls-7 {
+  fill : #9ab3ce;
+}

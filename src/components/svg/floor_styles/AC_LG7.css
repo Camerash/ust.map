@@ -1,0 +1,36 @@
+.ac-lg7-cls-3,
+.ac-lg7-cls-5 {
+  fill : none;
+}
+
+.ac-lg7-cls-3,
+.ac-lg7-cls-4,
+.ac-lg7-cls-5,
+.ac-lg7-cls-6,
+.ac-lg7-cls-7 {
+  stroke            : #6d6e71;
+  stroke-miterlimit : 10;
+}
+
+.ac-lg7-cls-3,
+.ac-lg7-cls-4,
+.ac-lg7-cls-6,
+.ac-lg7-cls-7 {
+  stroke-width : 2px;
+}
+
+.ac-lg7-cls-4 {
+  fill : #d1d3d4;
+}
+
+.ac-lg7-cls-5 {
+  stroke-width : 6px;
+}
+
+.ac-lg7-cls-6 {
+  fill : #d4e6ac;
+}
+
+.ac-lg7-cls-7 {
+  fill : #9ab3ce;
+}
