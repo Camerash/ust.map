@@ -7,7 +7,13 @@ import Tag from '../Tag';
 class AC_LG1 extends Component {
   constructor(props) {
    super(props);
-   this.state = {isInFocus: true};
+   this.state = {isInFocus: false};
+   this.onLayerClick = this.onLayerClick.bind(this);
+  }
+
+  onLayerClick() {
+    this.props.onClick(this.props.id);
+    this.setState({isInFocus: true});
   }
 
   render() {
@@ -25,17 +31,17 @@ class AC_LG1 extends Component {
 
     return (
       <div>
-        <div className="tag-layer">
-          {tagLayer}
-        </div>
-        <svg id="AC-LG1" viewBox="0 0 5700 2900">
+        <svg id="AC-LG1" viewBox="0 0 5700 2900" className="floor-svg" style={{
+            WebkitTransform: `scale(${this.props.scale},${this.props.scale})`,
+            Transform: `scale(${this.props.scale},${this.props.scale})`
+          }}>
           <defs />
           <g id="AC-LG1-BG" className="floor-bg">
-            <path
+            <path onClick={this.onLayerClick}
               d="M1263 2321a10 10 0 0 1-10-10v-44l-663-2a10 10 0 0 1-10-10l-1-87h-54a10 10 0 0 1-10-10v-44a10 10 0 0 1 10-10h24l1-498h-26a10 10 0 0 1-10-10v-53a10 10 0 0 1 10-10h93a10 10 0 0 1 10 10v46h453v-44a10 10 0 0 1 10-10h91a10 10 0 0 1 10 10v42h100l-1-129a10 10 0 0 1 10-10h451l2-338-1038-2a10 10 0 0 1-10-10V995H478a10 10 0 0 1-10-10l-1-276a10 10 0 0 1 10-10h353v-79a10 10 0 0 1 10-10h254a10 10 0 0 1 10 10v30a474 474 0 0 1 209-82l50-50a10 10 0 0 1 14 0l50 50c54 10 104 26 149 48a485 485 0 0 1 102 66c42 35 64 67 72 79h116v-82a10 10 0 0 1 10-10h158a10 10 0 0 1 10 10v23h28a10 10 0 0 1 10 10v50l148 1 1-50a10 10 0 0 1 10-10h29v-23a10 10 0 0 1 10-10h146V231a10 10 0 0 1 10-10h334a10 10 0 0 1 10 10v646a10 10 0 0 1-10 10l-384-3v199a10 10 0 0 1-10 10h-122l2 310v1l-15 214a10 10 0 0 1-12 9s-27-5-70-5c-87 0-259 21-433 155a717 717 0 0 0-235 354 588 588 0 0 0-25 180 10 10 0 0 1-10 10z"
               fill="#e6e7e8"
             />
-            <path className="floor-bg-border"
+            <path className="floor-bg-border" onClick={this.onLayerClick}
               d="M2770 231v646l-394-3v209h-132l2 321-15 214s-27-6-72-6c-93 0-265 22-439 157-283 235-264 542-264 542h-193v-54l-673-2-1-96-64-1v-44h34l1-518h-36v-53h93l1 56h472v-54h91v52h120l-1-139h461l2-358-1048-2V985H478l-1-276h364l-1-89h254v50c101-81 224-92 224-92l52-53 53 52a461 461 0 0 1 322 194h131v-92h158l1 33h37l1 60 167 1 1-60h39v-33h156V231h334m0-20h-334a20 20 0 0 0-20 20v429h-136a20 20 0 0 0-20 20v13h-19a20 20 0 0 0-20 20l-1 40-128-1v-40a20 20 0 0 0-20-20h-18v-13a20 20 0 0 0-20-20h-158a20 20 0 0 0-20 20v72h-101c-10-15-33-44-71-77a495 495 0 0 0-103-67c-46-23-96-39-149-48l-48-48a20 20 0 0 0-28 0l-48 48a480 480 0 0 0-70 16 511 511 0 0 0-75 29 453 453 0 0 0-49 27v-11a20 20 0 0 0-20-20H840a20 20 0 0 0-20 21v68H477a20 20 0 0 0-20 21l1 275a20 20 0 0 0 20 20h217v93a20 20 0 0 0 20 20l1028 2-1 318h-442a20 20 0 0 0-20 21l1 118h-80v-32a20 20 0 0 0-20-20h-91a20 20 0 0 0-20 20v34H637v-36a20 20 0 0 0-20-20h-93a20 20 0 0 0-20 20v53a20 20 0 0 0 20 20h16l-1 478h-14a20 20 0 0 0-20 20v44a20 20 0 0 0 20 20h44l1 77a20 20 0 0 0 20 20l653 2v34a20 20 0 0 0 20 20h193a20 20 0 0 0 20-21s-1-19 2-50a658 658 0 0 1 24-128c27-93 89-229 230-347a701 701 0 0 1 427-153c42 0 68 5 68 5a20 20 0 0 0 24-18l15-214v-2l-2-300h112a20 20 0 0 0 20-20V894l373 3h1a20 20 0 0 0 20-20V231a20 20 0 0 0-20-20z"
               fill="#6d6e71"
             />
@@ -170,6 +176,13 @@ class AC_LG1 extends Component {
             />
           </g>
         </svg>
+        <div className="floor-svg" style={{
+            opacity: `${this.props.selected ? 1 : 0}`,
+            "width": `${this.props.scale}00%`,
+            "height": `${this.props.scale > 1 ? 390 : 100}%`
+          }}>
+          {tagLayer}
+        </div>
       </div>
     );
   }

@@ -1,6 +1,6 @@
 .floor-bg {
   pointer-events : auto;
-  cursor         : zoom-in;
+  cursor         :pointer;
 }
 
 .floor-bg-border {
@@ -14,10 +14,10 @@
 
 .floor-svg {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-transition: opacity 1s, -webkit-transform 1s;
-  	transition: opacity 1s, transform 1s;
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-transition: all 1s;
+  	transition: all 1s;
     -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
     transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 }

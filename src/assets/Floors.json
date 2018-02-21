@@ -65,21 +65,21 @@
     "id":"ac-lg3",
     "name": "LG3",
     "index": 3,
-    "scale": 1,
+    "scale": 4,
     "z": 15
   },
   "AC-LG4": {
     "id":"ac-lg4",
     "name": "LG4",
     "index": 2,
-    "scale": 1,
+    "scale": 4,
     "z": 10
   },
   "AC-LG5": {
     "id":"ac-lg5",
     "name": "LG5",
     "index": 1,
-    "scale": 1,
+    "scale": 4,
     "z": 5
   },
   "AC-LG7": {

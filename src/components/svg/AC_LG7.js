@@ -22,10 +22,9 @@ class AC_LG7 extends Component {
     Object.keys(infoJson).forEach(function(key) {
       infoArr.push(infoJson[key]);
     });
-    let dummyLayer = infoArr.map(item => <Tag id={item.id} key={item.id} width="5700" height="2900" data={item} />)
 
     if(this.state.isInFocus) {
-      tagLayer = dummyLayer;
+      tagLayer = infoArr.map(item => <Tag id={item.id} key={item.id} width="5700" height="2900" data={item} />)
     } else {
       tagLayer = null;
     }
@@ -110,8 +109,8 @@ class AC_LG7 extends Component {
         </svg>
         <div className="floor-svg" style={{
             opacity: `${this.props.selected ? 1 : 0}`,
-            WebkitTransform: `scale(${this.props.scale},${this.props.scale})`,
-            Transform: `scale(${this.props.scale},${this.props.scale})`
+            "width": `${this.props.scale}00%`,
+            "height": `${this.props.scale > 1 ? 390 : 100}%`
           }}>
           {tagLayer}
         </div>
