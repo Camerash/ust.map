@@ -21,12 +21,14 @@ const floorMap = {
   "ac-lg7": AC_LG7
 }
 
+const animDuration = 1000;
+
 class Floor extends Component {
 
   generateFloor(data, onClick, selected) {
     console.log(data.id)
     const floor = floorMap[data.id];
-    return React.createElement(floor, {id:data.id, onClick:onClick, selected:selected, scale: selected ? data.scale : 1});
+    return React.createElement(floor, {id:data.id, onClick:onClick, selected:selected, animDuration: animDuration, scale: selected ? data.scale : 1});
   }
 
   render() {

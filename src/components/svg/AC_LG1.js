@@ -13,7 +13,7 @@ class AC_LG1 extends Component {
 
   onLayerClick() {
     this.props.onClick(this.props.id);
-    this.setState({isInFocus: true});
+    setTimeout(() => {this.setState({isInFocus: true});}, this.props.animDuration);
   }
 
   render() {
@@ -23,7 +23,11 @@ class AC_LG1 extends Component {
       infoArr.push(infoJson[key]);
     });
 
-    if(this.state.isInFocus) {
+    if(!this.props.selected && this.state.isInFocus) {
+      setTimeout(() => {this.setState({isInFocus: false});}, this.props.animDuration);
+    }
+
+    if(this.props.selected || this.state.isInFocus) {
       tagLayer = infoArr.map(item => <Tag id={item.id} key={item.id} width="5700" height="2900" data={item} />)
     } else {
       tagLayer = null;
@@ -177,9 +181,9 @@ class AC_LG1 extends Component {
           </g>
         </svg>
         <div className="floor-svg" style={{
-            opacity: `${this.props.selected ? 1 : 0}`,
+            opacity: `${this.props.selected && this.state.isInFocus ? 1 : 0}`,
             "width": `${this.props.scale}00%`,
-            "height": `${this.props.scale > 1 ? 390 : 100}%`
+            "height": `${this.props.scale > 1 ? 380 : 100}%`
           }}>
           {tagLayer}
         </div>

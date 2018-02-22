@@ -16,8 +16,8 @@
     position: absolute;
     -webkit-transform-origin: top left;
     transform-origin: top left;
-    -webkit-transition: all 1s;
-  	transition: all 1s;
+    -webkit-transition: all 1s, opacity 0.3s;
+  	transition: all 1s, opacity 0.3s;
     -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
     transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 }
