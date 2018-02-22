@@ -1,5 +1,5 @@
 .floor-bg {
-  cursor         :pointer;
+  pointer-events: auto;
 }
 
 .floor-bg-border {

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import InlineSVG from 'react-inlinesvg';
 import '../styles/Layers.css';
 import '../styles/Floor.css';
-import floors from '../assets/Floors.json'
+import floors from '../assets/Floors.json';
+import Drag from './DragAndZoom';
 import { AC_7, AC_6, AC_5, AC_4, AC_3, AC_2, AC_1, AC_G, AC_LG1, AC_LG3, AC_LG4, AC_LG5, AC_LG7 } from '../components/svg/Floors'
 
 const floorMap = {
@@ -87,6 +88,7 @@ class Layers extends Component {
     });
 
     return (
+      <Drag zoomStep={2} activated={this.state.inFocus} onDragStart={() => this.state.inFocus}>
       <div className='maps'>
         <div className='layers' style={{
             WebkitTransform: `rotateX(65deg) translateZ(-20vmin) rotateZ(${this.state.inFocus ? '-10' : '-25'}deg)`,
@@ -94,7 +96,7 @@ class Layers extends Component {
           }}>
           {floorArr.map(item => <Floor key={item.id} data={item} inFocus={this.state.inFocus} selected={this.state.floorSelected.get(item.id)} onClick={this.onFloorClick} />)}
         </div>
-      </div>
+      </div></Drag>
     );
   }
 }

@@ -45,10 +45,11 @@
 	transform: translateZ(100vmin)!important;
 }
 
+.ac-lg1,
 .ac-lg3,
 .ac-lg4,
 .ac-lg5,
 .ac-lg7 {
-	-webkit-transform: translateX(-25vmin) translateY(-100vmin) translateZ(30vmin) rotateX(-20deg)!important;
-	transform: translateX(-25vmin) translateY(-100vmin) translateZ(30vmin) rotateX(-20deg)!important;
+	-webkit-transform: translateX(-35vmin) translateY(-100vmin) translateZ(30vmin) rotateX(-20deg)!important;
+	transform: translateX(-35vmin) translateY(-100vmin) translateZ(30vmin) rotateX(-20deg)!important;
 }
