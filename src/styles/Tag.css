@@ -1,12 +1,30 @@
 .map-tag{
-  display: flex;
   position: absolute;
-  width: 5px;
-  height: 5px;
-}
-
-.tag {
-  font-size: 1.5vmin!important;
+  width: 5vmin;
+  height: 5vmin;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+.tag-container{
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  pointer-events : auto;
+  cursor         :pointer;
+}
+
+.tag-icon {
+  display: inline-block;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+  font-size: 2vmin!important;
+  margin: 0 auto!important;
 }
