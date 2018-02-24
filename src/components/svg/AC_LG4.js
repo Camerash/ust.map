@@ -133,7 +133,7 @@ class AC_LG4 extends Component {
         <div className="floor-svg" style={{
             opacity: `${this.props.selected && this.state.isInFocus ? 1 : 0}`,
             "width": `${this.props.scale}00%`,
-            "height": `${this.props.scale > 1 ? 380 : 100}%`
+            "height": `${this.props.scale > 1 ? 95*this.props.scale : 100}%`
           }}>
           {tagLayer}
         </div>

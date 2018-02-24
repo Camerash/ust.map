@@ -21,7 +21,7 @@ class Tag extends Component {
         tag = <Icon className="tag-icon" circular inverted color="pink" name="female"/>
         break;
       default:
-        tag = <Icon className="tag-icon" circular name="heart"/>
+        tag = <Icon className="tag-icon" circular inverted color="green" name="square"/>
     }
 
     let x = (((this.props.data.x) / this.props.width) * 100);

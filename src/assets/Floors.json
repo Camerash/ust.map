@@ -3,55 +3,56 @@
     "id":"ac-7",
     "name": "7",
     "index": 12,
-    "scale": 1,
+    "scale": 3,
     "z": 60
   },
   "AC-6": {
     "id":"ac-6",
     "name": "6",
     "index": 11,
-    "scale": 1,
+    "scale": 3,
     "z": 55
   },
   "AC-5": {
     "id":"ac-5",
     "name": "5",
     "index": 10,
-    "scale": 1,
+    "scale": 3,
     "z": 50
   },
   "AC-4": {
     "id":"ac-4",
     "name": "4",
     "index": 9,
-    "scale": 1,
+    "scale": 3,
     "z": 45
   },
   "AC-3": {
     "id":"ac-3",
     "name": "3",
     "index": 8,
-    "scale": 1,
+    "scale": 3,
     "z": 40
   },
   "AC-2": {
     "id":"ac-2",
     "name": "2",
     "index": 7,
-    "scale": 1,
+    "scale": 3,
     "z": 35
   },
   "AC-1": {
     "id":"ac-1",
     "name": "1",
     "index": 6,
-    "scale": 1,
+    "scale": 3,
     "z": 30
   },
   "AC-G": {
     "id":"ac-g",
     "name": "G",
     "index": 5,
+    "scale": 3,
     "z": 25
   },
   "AC-LG1": {

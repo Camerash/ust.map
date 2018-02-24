@@ -12,6 +12,13 @@
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 	will-change: transform, opacity;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	 -khtml-user-select: none; /* Konqueror HTML */
+		 -moz-user-select: none; /* Firefox */
+			-ms-user-select: none; /* Internet Explorer/Edge */
+					user-select: none; /* Non-prefixed version, currently
+																supported by Chrome and Opera */
 }
 
 .floor::after {
@@ -45,11 +52,31 @@
 	transform: translateZ(100vmin)!important;
 }
 
+.ac-2,
+.ac-3,
+.ac-4,
+.ac-5,
+.ac-6,
+.ac-7 {
+	-webkit-transform: translateX(-130vmin) translateY(-100vmin) translateZ(60vmin) rotateX(-30deg)!important;
+	transform: translateX(-130vmin) translateY(-100vmin) translateZ(60vmin) rotateX(-30deg)!important;
+}
+
+.ac-1 {
+	-webkit-transform: translateX(-100vmin) translateY(-100vmin) translateZ(60vmin) rotateX(-30deg)!important;
+	transform: translateX(-100vmin) translateY(-100vmin) translateZ(60vmin) rotateX(-30deg)!important;
+}
+
+.ac-g {
+	-webkit-transform: translateX(-65vmin) translateY(-100vmin) translateZ(60vmin) rotateX(-30deg)!important;
+	transform: translateX(-65vmin) translateY(-100vmin) translateZ(60vmin) rotateX(-30deg)!important;
+}
+
 .ac-lg1,
 .ac-lg3,
 .ac-lg4,
 .ac-lg5,
 .ac-lg7 {
-	-webkit-transform: translateX(-35vmin) translateY(-100vmin) translateZ(30vmin) rotateX(-20deg)!important;
-	transform: translateX(-35vmin) translateY(-100vmin) translateZ(30vmin) rotateX(-20deg)!important;
+	-webkit-transform: translateX(-30vmin) translateY(-100vmin) translateZ(50vmin) rotateX(-30deg)!important;
+	transform: translateX(-30vmin) translateY(-100vmin) translateZ(50vmin) rotateX(-30deg)!important;
 }
