@@ -88,15 +88,16 @@ class Layers extends Component {
     });
 
     return (
-      <Drag zoomStep={2} activated={this.state.inFocus} onDragStart={() => this.state.inFocus}>
-      <div className='maps'>
-        <div className='layers' style={{
-            WebkitTransform: `rotateX(65deg) translateZ(-20vmin) rotateZ(${this.state.inFocus ? '-10' : '-25'}deg)`,
-            Transform: `rotateX(65deg) translateZ(-20vmin) rotateZ(${this.state.inFocus ? '-10' : '-25'}deg)`
-          }}>
-          {floorArr.map(item => <Floor key={item.id} data={item} inFocus={this.state.inFocus} selected={this.state.floorSelected.get(item.id)} onClick={this.onFloorClick} />)}
+      <Drag zoomStep={20} maxZoom={200} minZoom={100} active={this.state.inFocus}>
+        <div className='maps'>
+          <div className='layers' style={{
+              WebkitTransform: `rotateX(65deg) translateZ(-20vmin) rotateZ(${this.state.inFocus ? '-10' : '-25'}deg)`,
+              Transform: `rotateX(65deg) translateZ(-20vmin) rotateZ(${this.state.inFocus ? '-10' : '-25'}deg)`
+            }}>
+            {floorArr.map(item => <Floor key={item.id} data={item} inFocus={this.state.inFocus} selected={this.state.floorSelected.get(item.id)} onClick={this.onFloorClick} />)}
+          </div>
         </div>
-      </div></Drag>
+      </Drag>
     );
   }
 }

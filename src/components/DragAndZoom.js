@@ -14,7 +14,6 @@ const updatePercentageBasedOnScroll = ({ percentage, min, max, step, delta }) =>
 
 class DragAndZoom extends PureComponent {
   static propTypes = {
-    active: boolean,
     zoomStep: number,
     initialZoom: number,
     minZoom: number,
@@ -82,6 +81,13 @@ class DragAndZoom extends PureComponent {
   };
 
   render() {
+    var positionProps = null;
+
+    if(!this.props.active) {
+      this.state.zoom = 100;
+      positionProps = { position: {x:0, y:0} };
+    }
+
     const {
       active,
       children,
@@ -101,21 +107,24 @@ class DragAndZoom extends PureComponent {
     return (
       <div {...other}>
         <Draggable
+          disabled={!active}
           onMouseDown={onMouseDown}
           onStart={onDragStart}
           onDrag={onDrag}
           onStop={onDragStop}
           bounds={bounds}
+          {...positionProps}
         >
-          <div>
+          <div style={{ transition: `transform ${this.props.active ? 0 : 1}s ease-out` }}>
             <div
               onWheel={this.handleMouseWheel}
               onMouseMove={this.handleMouseMove}
               ref={node => (this.target = node)}
               style={{
                 ...children.props.style,
+                pointerEvents: this.props.active ? 'auto' : 'none',
                 cursor: this.state.isScrolling ? 'row-resize' : 'move',
-                transition: 'transform-origin 1000ms ease-out',
+                transition: 'transform-origin 0.5s ease-out, transform 0.5s ease-out',
                 transform: `scale(${this.state.zoom / 100})`,
                 transformOrigin: `${this.state.originX}% ${this.state.originY}%`,
               }}
