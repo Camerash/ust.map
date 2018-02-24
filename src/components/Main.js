@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/Main.css';
 import { Label } from 'semantic-ui-react';
+import SearchBar from './SearchBar';
 import Layers from './Layers';
 import Nav from './Nav';
 
@@ -44,6 +45,7 @@ class Main extends Component {
   render() {
     return (
       <div className='main'>
+        <div className="searchBar"><SearchBar /></div>
         <Layers ref={(layerRef) => { this.layerRef = layerRef; }} onFloorClick={this.onFloorClick}/>
         <Nav onClickAllFloors={this.onClickAllFloors}/>
         <div className="floorLabel" style={{ opacity: `${this.state.floorFocus ? 1 : 0}` }}>
