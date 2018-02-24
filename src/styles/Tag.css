@@ -24,7 +24,7 @@
   left: 5%;
   -webkit-transform-origin: center bottom;
   transform-origin: center bottom;
-  font-size: 100%!important;
+  font-size: 2vmin!important;
   margin: 0 auto!important;
   -webkit-transform: rotate3d(0.3,-0.5,0.3,30deg);
   transform: rotate3d(0.3,-0.5,0.3,30deg);

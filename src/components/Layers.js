@@ -79,6 +79,7 @@ class Layers extends Component {
       floorSelected: stateMap,
       inFocus: true
     });
+    this.props.onFloorClick(id);
   }
 
   render() {
