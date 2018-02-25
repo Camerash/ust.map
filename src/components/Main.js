@@ -10,6 +10,7 @@ class Main extends Component {
     super(props);
     this.onClickAllFloors = this.onClickAllFloors.bind(this);
     this.onFloorClick = this.onFloorClick.bind(this);
+    this.onSearchResultClick = this.onSearchResultClick.bind(this);
     this.state = {
       floorFocus: false,
       floorName: ""
@@ -42,10 +43,14 @@ class Main extends Component {
     });
   }
 
+  onSearchResultClick(id) {
+    this.layerRef.onSearch(id);
+  }
+
   render() {
     return (
       <div className='main'>
-        <div className="searchBar"><SearchBar /></div>
+        <div className="searchBar"><SearchBar onSearchResultClick={this.onSearchResultClick} /></div>
         <Layers ref={(layerRef) => { this.layerRef = layerRef; }} onFloorClick={this.onFloorClick}/>
         <Nav onClickAllFloors={this.onClickAllFloors}/>
         <div className="floorLabel" style={{ opacity: `${this.state.floorFocus ? 1 : 0}` }}>

@@ -27,7 +27,6 @@ const animDuration = 1000;
 class Floor extends Component {
 
   generateFloor(data, onClick, selected) {
-    console.log(data.id)
     const floor = floorMap[data.id];
     return React.createElement(floor, {id:data.id, onClick:onClick, selected:selected, animDuration: animDuration, scale: selected ? data.scale : 1});
   }
@@ -57,6 +56,7 @@ class Layers extends Component {
     }
     this.onFloorClick = this.onFloorClick.bind(this);
     this.showAllFloor = this.showAllFloor.bind(this);
+    this.onSearch = this.onSearch.bind(this);
   }
 
   showAllFloor() {
@@ -71,7 +71,8 @@ class Layers extends Component {
     });
   }
 
-  onFloorClick(id) {
+  onFloorClick(floorId) {
+    var id = floorId.toLowerCase();
     if(this.state.inFocus) return;
     var stateMap = this.state.floorSelected;
     stateMap.set(id, true);
@@ -80,6 +81,11 @@ class Layers extends Component {
       inFocus: true
     });
     this.props.onFloorClick(id);
+  }
+
+  onSearch(id) {
+    var floorId = id.split("-");
+    this.onFloorClick(`${floorId[0]}-${floorId[1]}`);
   }
 
   render() {

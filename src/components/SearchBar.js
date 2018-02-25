@@ -5,6 +5,11 @@ import { Search } from 'semantic-ui-react'
 import source from '../assets/SearchData.json';
 
 class SearchBarDefault extends Component {
+  constructor(props) {
+    super(props);
+    this.handleResultSelect = this.handleResultSelect.bind(this);
+  }
+
   componentWillMount() {
     this.resetComponent()
   }
@@ -12,7 +17,7 @@ class SearchBarDefault extends Component {
   resetComponent = () => this.setState({ isLoading: false, results: [], value: '' })
 
   handleResultSelect = (e, { result }) => {
-
+    this.props.onSearchResultClick(result.key);
   }
 
   handleSearchChange = (e, { value }) => {
@@ -49,13 +54,14 @@ class SearchBarDefault extends Component {
         onSearchChange={this.handleSearchChange}
         results={results}
         value={value}
-        {...this.props}
+        categoryRenderer={this.props.categoryRenderer}
+        resultRenderer={this.props.resultRenderer}
       />
     )
   }
 }
 
-const categoryRenderer = ({ name }) => <div className="name">Floor {name}</div>
+const categoryRenderer = ({ name }) => <div key={name} className="name">Floor {name}</div>
 
 categoryRenderer.propTypes = {
   name: PropTypes.string,
@@ -68,10 +74,11 @@ resultRenderer.propTypes = {
   lift: PropTypes.string,
 }
 
-const SearchBar = () => (
+const SearchBar = (props) => (
   <SearchBarDefault
     categoryRenderer={categoryRenderer}
     resultRenderer={resultRenderer}
+    onSearchResultClick={props.onSearchResultClick}
   />
 )
 

@@ -13,7 +13,6 @@ class AC_LG4 extends Component {
 
   onLayerClick() {
     this.props.onClick(this.props.id);
-    setTimeout(() => {this.setState({isInFocus: true});}, this.props.animDuration);
   }
 
   render() {
@@ -25,6 +24,8 @@ class AC_LG4 extends Component {
 
     if(!this.props.selected && this.state.isInFocus) {
       setTimeout(() => {this.setState({isInFocus: false});}, this.props.animDuration);
+    } else if (this.props.selected && !this.state.isInFocus) {
+      setTimeout(() => {this.setState({isInFocus: true});}, this.props.animDuration);
     }
 
     if(this.props.selected || this.state.isInFocus) {
