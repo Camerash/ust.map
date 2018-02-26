@@ -1,10 +1,16 @@
+.container {
+	display: flex;
+	flex-flow: column;
+	height: 100vh;
+}
+
 .main {
-	position: fixed;
+	position: relative;
+	flex: 3;
 	top: 0;
 	left: 0;
 	overflow: hidden;
 	width: 100vw;
-	height: 100vh;
 }
 
 .searchBar {
@@ -20,13 +26,28 @@
 
 .floorLabel{
 	filter: drop-shadow(0 0 2px #333);
-	position: fixed;
+	position: absolute;
 	bottom: 0;
 	left: 0;
 	margin: 1.5em;
 	text-align: center;
 	-webkit-transition: all 1s;
 	transition: all 1s;
+}
+
+.routePanel{
+	filter: drop-shadow(0 0 2px #333);
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+.routePanelActive {
+	overflow-x: scroll;
+	flex: 1;
 }
 
 .floorLabelText{

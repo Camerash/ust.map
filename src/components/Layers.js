@@ -95,7 +95,7 @@ class Layers extends Component {
     });
 
     return (
-      <Drag zoomStep={20} maxZoom={200} minZoom={100} active={this.state.inFocus}>
+      <Drag className="maps" zoomStep={20} maxZoom={200} minZoom={100} active={this.state.inFocus}>
         <div className='maps'>
           <div className='layers' style={{
               WebkitTransform: `rotateX(65deg) rotateY(-3deg) translateZ(-20vmin) rotateZ(${this.state.inFocus ? '-10' : '-25'}deg)`,

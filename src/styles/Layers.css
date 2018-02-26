@@ -1,7 +1,7 @@
 .maps {
-	position: relative;
+	position: absolute;
 	width: 100vw;
-	height: 100vh;
+	height: 100%;
 	pointer-events: none;
 	backface-visibility: hidden;
 	-webkit-perspective: 3500px;

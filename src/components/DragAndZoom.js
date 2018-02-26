@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { number, boolean, func, oneOf, shape, string } from 'prop-types';
 import Draggable from 'react-draggable';
+import '../styles/Drag.css';
 
 const isNegative = n => ((n = +n) || 1 / n) < 0;
 
@@ -115,8 +116,8 @@ class DragAndZoom extends PureComponent {
           bounds={bounds}
           {...positionProps}
         >
-          <div style={{ transition: `transform ${this.props.active ? 0 : 1}s ease-out` }}>
-            <div
+          <div className="dragContainer" style={{ transition: `transform ${this.props.active ? 0 : 1}s ease-out` }}>
+            <div className="dragContainer"
               onWheel={this.handleMouseWheel}
               onMouseMove={this.handleMouseMove}
               ref={node => (this.target = node)}

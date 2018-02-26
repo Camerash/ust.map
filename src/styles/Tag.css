@@ -32,8 +32,8 @@
 
 .tag-icon-small {
   position: absolute;
-  top: 5%;
-  left: 5%;
+  top: 15%;
+  left: 13%;
   -webkit-transform-origin: center bottom;
   transform-origin: center bottom;
   font-size: 1.5vmin!important;
