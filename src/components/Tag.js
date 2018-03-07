@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import { Label, Popup, Icon } from 'semantic-ui-react'
 import '../styles/Tag.css';
 
-const typeMap = {
-  "escalator":""
-}
-
 class Tag extends Component {
 
   render() {

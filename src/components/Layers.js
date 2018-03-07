@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import InlineSVG from 'react-inlinesvg';
 import '../styles/Layers.css';
 import '../styles/Floor.css';
 import floors from '../assets/Floors.json';

@@ -67,7 +67,7 @@ categoryRenderer.propTypes = {
   name: PropTypes.string,
 }
 
-const resultRenderer = ({ name, lift }) => <div><div className="price">{ (lift != null && lift != "") ? "Lift " + lift : "" }</div><div className="title">{ name.match(/^\d/) ? "Room" + name : name }</div></div>
+const resultRenderer = ({ name, lift }) => <div><div className="price">{ (lift !== null && lift !== "") ? "Lift " + lift : "" }</div><div className="title">{ name.match(/^\d/) ? "Room" + name : name }</div></div>
 
 resultRenderer.propTypes = {
   name: PropTypes.string,

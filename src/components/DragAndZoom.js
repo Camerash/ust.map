@@ -1,5 +1,5 @@
-import React, { PureComponent } from 'react';
-import { number, boolean, func, oneOf, shape, string } from 'prop-types';
+import React, { Component } from 'react';
+import { number, func, oneOf, shape, string } from 'prop-types';
 import Draggable from 'react-draggable';
 import '../styles/Drag.css';
 
@@ -13,7 +13,7 @@ const updatePercentageBasedOnScroll = ({ percentage, min, max, step, delta }) =>
   return newPercentage;
 };
 
-class DragAndZoom extends PureComponent {
+class DragAndZoom extends Component {
   static propTypes = {
     zoomStep: number,
     initialZoom: number,
@@ -49,7 +49,7 @@ class DragAndZoom extends PureComponent {
     e.preventDefault();
 
     if(!this.props.active) return;
-    const { minZoom, maxZoom, zoomStep, onZoom } = this.props;
+    const { minZoom, maxZoom, zoomStep } = this.props;
 
     const zoom = updatePercentageBasedOnScroll({
       percentage: this.state.zoom,
@@ -81,11 +81,17 @@ class DragAndZoom extends PureComponent {
     };
   };
 
+  shouldComponentUpdate(nextProps, nextState) {
+    if(!nextProps.active) {
+      nextState.zoom = 100;
+    }
+    return true;
+  }
+
   render() {
     var positionProps = null;
 
     if(!this.props.active) {
-      this.state.zoom = 100;
       positionProps = { position: {x:0, y:0} };
     }
 

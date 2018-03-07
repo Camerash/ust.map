@@ -9,6 +9,8 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.onClickAllFloors = this.onClickAllFloors.bind(this);
+    this.onClickUpFloor = this.onClickUpFloor.bind(this);
+    this.onClickDownFloor = this.onClickDownFloor.bind(this);
     this.onFloorClick = this.onFloorClick.bind(this);
     this.onSearchResultClick = this.onSearchResultClick.bind(this);
     this.state = {
@@ -25,6 +27,14 @@ class Main extends Component {
     this.layerRef.showAllFloor();
   }
 
+  onClickUpFloor() {
+
+  }
+
+  onClickDownFloor() {
+
+  }
+
   onFloorClick(name) {
     var buildingName = "";
     var floorName = "";
@@ -33,6 +43,7 @@ class Main extends Component {
       case "ac":
         buildingName = "Academic Building";
         break;
+      default:
     }
     floorName = floorArr[1].toUpperCase();
 
@@ -53,7 +64,7 @@ class Main extends Component {
         <div className="main">
           <div className="searchBar"><SearchBar onSearchResultClick={this.onSearchResultClick} /></div>
           <Layers ref={(layerRef) => { this.layerRef = layerRef; }} onFloorClick={this.onFloorClick}/>
-          <Nav focusing={this.state.floorFocus} onClickAllFloors={this.onClickAllFloors}/>
+          <Nav focusing={this.state.floorFocus} onClickAllFloors={this.onClickAllFloors} onClickUpFloor={this.onClickUpFloor} onClickDownFloor={this.onClickDownFloor}/>
           <div className="floorLabel" style={{ opacity: `${this.state.floorFocus ? 1 : 0}` }}>
             <Label className="floorLabelText" size="huge">{this.state.floorName}</Label>
           </div>
