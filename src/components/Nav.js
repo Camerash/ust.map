@@ -6,7 +6,7 @@ class Nav extends Component {
 
   render() {
     return (
-      <div className='nav'>
+      <div className='nav' style={{ opacity: `${this.props.focusing ? 1 : 0}`}}>
         <Button.Group vertical>
           <Button size='huge' icon='caret up'/>
           <Button primary size='huge' icon='map' onClick={this.props.onClickAllFloors}/>

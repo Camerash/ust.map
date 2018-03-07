@@ -53,7 +53,7 @@ class Main extends Component {
         <div className="main">
           <div className="searchBar"><SearchBar onSearchResultClick={this.onSearchResultClick} /></div>
           <Layers ref={(layerRef) => { this.layerRef = layerRef; }} onFloorClick={this.onFloorClick}/>
-          <Nav onClickAllFloors={this.onClickAllFloors}/>
+          <Nav focusing={this.state.floorFocus} onClickAllFloors={this.onClickAllFloors}/>
           <div className="floorLabel" style={{ opacity: `${this.state.floorFocus ? 1 : 0}` }}>
             <Label className="floorLabelText" size="huge">{this.state.floorName}</Label>
           </div>
