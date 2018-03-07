@@ -75,6 +75,7 @@ class Layers extends Component {
     this.showAllFloor = this.showAllFloor.bind(this);
     this.switchFloor = this.switchFloor.bind(this);
     this.onSearch = this.onSearch.bind(this);
+    this.onLevelNavClick = this.onLevelNavClick.bind(this);
   }
 
   showAllFloor() {
@@ -126,6 +127,10 @@ class Layers extends Component {
   onSearch(id) {
     var floorId = id.split("-");
     this.onFloorClick(`${floorId[0]}-${floorId[1]}`);
+  }
+
+  onLevelNavClick(id) {
+    this.onFloorClick(id);
   }
 
   render() {

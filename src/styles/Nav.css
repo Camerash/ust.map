@@ -5,6 +5,10 @@
 	right: 0;
 	margin: 1.5em;
 	text-align: center;
-	-webkit-transition: opacity 1s;
-	transition: opacity 1s;
+	-webkit-transition: all 1s;
+	transition: all 1s;
+}
+
+.button-style {
+	width: 1.7cm!important;
 }

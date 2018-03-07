@@ -8,9 +8,9 @@ class Nav extends Component {
     return (
       <div className='nav' style={{ opacity: `${this.props.focusing ? 1 : 0}`}}>
         <Button.Group vertical>
-          <Button size='huge' icon='caret up' onClick={this.props.onClickUpFloor}/>
-          <Button primary size='huge' icon='map' onClick={this.props.onClickAllFloors}/>
-          <Button size='huge' icon='caret down' onClick={this.props.onClickDownFloor}/>
+          <Button className='button-style' size='huge' icon='caret up' onClick={this.props.onClickUpFloor}/>
+          <Button className='button-style' primary size='huge' icon='map' onClick={this.props.onClickAllFloors}/>
+          <Button className='button-style' size='huge' icon='caret down' onClick={this.props.onClickDownFloor}/>
         </Button.Group>
       </div>
     );
