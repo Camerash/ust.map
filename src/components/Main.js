@@ -28,11 +28,11 @@ class Main extends Component {
   }
 
   onClickUpFloor() {
-
+    this.layerRef.switchFloor(1);
   }
 
   onClickDownFloor() {
-
+    this.layerRef.switchFloor(-1);
   }
 
   onFloorClick(name) {

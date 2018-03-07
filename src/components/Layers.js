@@ -3,6 +3,7 @@ import '../styles/Layers.css';
 import '../styles/Floor.css';
 import floors from '../assets/Floors.json';
 import Drag from './DragAndZoom';
+import _ from 'lodash';
 import { AC_7, AC_6, AC_5, AC_4, AC_3, AC_2, AC_1, AC_G, AC_LG1, AC_LG3, AC_LG4, AC_LG5, AC_LG7 } from '../components/svg/Floors'
 
 const floorMap = {
@@ -19,6 +20,22 @@ const floorMap = {
   "ac-lg4": AC_LG4,
   "ac-lg5": AC_LG5,
   "ac-lg7": AC_LG7
+}
+
+const indexMap = {
+  12:"ac-7",
+  11:"ac-6",
+  10:"ac-5",
+  9:"ac-4",
+  8:"ac-3",
+  7:"ac-2",
+  6:"ac-1",
+  5:"ac-g",
+  4:"ac-lg1",
+  3:"ac-lg3",
+  2:"ac-lg4",
+  1:"ac-lg5",
+  0:"ac-lg7"
 }
 
 const animDuration = 1000;
@@ -51,10 +68,12 @@ class Layers extends Component {
     });
     this.state = {
       floorSelected: stateMap,
-      inFocus: false
+      inFocus: false,
+      index: -1
     }
     this.onFloorClick = this.onFloorClick.bind(this);
     this.showAllFloor = this.showAllFloor.bind(this);
+    this.switchFloor = this.switchFloor.bind(this);
     this.onSearch = this.onSearch.bind(this);
   }
 
@@ -66,19 +85,41 @@ class Layers extends Component {
     });
     this.setState({
       floorSelected: stateMap,
-      inFocus: false
+      inFocus: false,
+      index: -1
     });
+  }
+
+  switchFloor(num) {
+    if(!this.state.inFocus) return;
+    var stateMap = this.state.floorSelected;
+    Object.keys(floors).forEach(function(key) {
+      stateMap.set(floors[key].id, false);
+    });
+    var newIndex = parseInt(this.state.index, 10) + parseInt(num, 10);
+    var floorId = _.get(indexMap, newIndex)
+    if(typeof floorId !== 'string') return;
+    stateMap.set(floorId, true);
+    this.setState({
+      floorSelected: stateMap,
+      inFocus: true,
+      index: newIndex
+    });
+    this.props.onFloorClick(floorId);
   }
 
   onFloorClick(floorId) {
     var id = floorId.toLowerCase();
     if(this.state.inFocus) return;
+    var index = _.findKey(indexMap, function(item) { return item === id });
     var stateMap = this.state.floorSelected;
     stateMap.set(id, true);
     this.setState({
       floorSelected: stateMap,
-      inFocus: true
+      inFocus: true,
+      index: index
     });
+    console.log(index)
     this.props.onFloorClick(id);
   }
 
