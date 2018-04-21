@@ -4,7 +4,7 @@
 >
 > -- _some boring CS student probably_
 
-Demo: http://ustmap.netlify.com/
+### [Demo](https://ustmap.netlify.com/)
 
 Test: `npm start`
 
