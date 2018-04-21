@@ -29,4 +29,4 @@ Contribute:
 > Camerash has sent you a beer! :beer:
 ```
 
-Heavily inspired by: https://github.com/codrops/Interactive3DMallMap
+Heavily inspired by: [Interactive3DMallMap](https://github.com/codrops/Interactive3DMallMap)
