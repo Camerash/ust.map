@@ -1,4 +1,4 @@
-# UST MAP
+# UST MAP 🗺
 
 > A baby step towards better navigation in HKUST, one floor at a time
 >
